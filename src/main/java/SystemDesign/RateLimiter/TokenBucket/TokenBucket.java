@@ -35,4 +35,8 @@ public class TokenBucket implements RateLimiter {
         currentCapacity.getAndSet(currCapacity);
         lastUpdatedTime.getAndSet(currentTime);
     }
+
+    public int getNowTokens() {
+        return currentCapacity.get();
+    }
 }
